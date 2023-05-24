@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+  <title>Get Code by Title</title>
+  <div th:replace="auth/header :: header"></div>
+  <style>
+    header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #e0e0e0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/user/findCode}">
+  <label for="query">Put Query to find Code</label>
+  <input type="text" id="query" name="query">
+  <input type="submit" value="FIND!">
+</form>
+<div th:if="${codes}">
+  <div th:if="${codes.isEmpty()}">
+    <span>Кодов с таким именнем не найдено!</span>
+  </div>
+
+<div th:each="cod:${codes}">
+  <p th:text="${cod.getName()}"></p>
+</div>
+
+</div>
+</body>
+</html>

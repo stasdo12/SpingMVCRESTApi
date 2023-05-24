@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Code with Pagination</title>
+    <div th:replace="auth/header :: header"></div>
+    <style>
+        .pagination {
+            margin-top: 10px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .pagination a.active {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Your other HTML content -->
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <!-- Add more table headers as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="code : ${codes}">
+        <td th:text="${code.getName()}"></td>
+        <!-- Add more table cells with code details as needed -->
+    </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <a th:if="${currentPage > 0}" th:href="@{/user/all_code?page=__${currentPage - 1}__&amp;codePerPage=20}">&laquo; Previous</a>
+    <a th:if="${currentPage < totalPages - 1}" th:href="@{/user/all_code?page=__${currentPage + 1}__&amp;codePerPage=20}">Next &raquo;</a>
+</div>
+
+</body>
+</html>

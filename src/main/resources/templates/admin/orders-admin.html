@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>ORDERS</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>BIDS</th>
+  </tr>
+  <tr th:each="bid:${bids}">
+    <td th:text="${bid.price} + ' BNBUSDT'"></td>
+    <td>BIDS</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>ASK</th>
+  </tr>
+  <tr th:each="as:${ask}">
+    <td th:text="${as.price} + ' BNBUSDT'"></td>
+    <td>ASK</td>
+  </tr>
+  <tr >
+    <td th:text="${ord.getCurrencyPair() + ' : ' + ord.profit} + ' PROFIT'"></td>
+    <td>ASK</td>
+  </tr>
+</table>
+
+<div th:each="can:${candle}">
+  <p th:text="${can.getOpenTime()}">VALUE</p>
+</div>
+</body>
+</html>

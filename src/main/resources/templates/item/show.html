@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Details</title>
+</head>
+<body>
+<div th:if="${item}">
+    <h2>Item Details</h2>
+    <p>Name: <span th:text="${item.name}"></span></p>
+
+    <h3>Characteristics:</h3>
+    <ul>
+        <li th:each="characteristic : ${item.characteristics}">
+            <span th:text="${characteristic.type}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

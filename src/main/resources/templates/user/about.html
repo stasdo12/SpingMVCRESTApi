@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+    <div th:replace="auth/header :: header"></div>
+</head>
+<body>
+<header>
+    <!-- Include the common header content -->
+    <!-- Navigation menu, logo, etc. -->
+</header>
+
+<div class="about-content">
+    <h1>About Us</h1>
+    <p>Welcome to our website!</p>
+    <!-- Additional content for the About page -->
+</div>
+
+<footer>
+    <!-- Include the common footer content -->
+    <!-- Contact information, social media links, etc. -->
+</footer>
+
+<style>
+    header {
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #e0e0e0;
+    }
+    /* CSS styles for the About page */
+    .about-content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f2f2f2;
+    }
+
+    .about-content h1 {
+        color: #333;
+        font-size: 24px;
+    }
+
+    .about-content p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+</style>
+
+</body>
+</html>

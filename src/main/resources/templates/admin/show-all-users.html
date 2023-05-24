@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>All Users</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="user : ${users}">
+    <td th:text="${user.getUsername()}"></td>
+    <td th:text="${user.getEmail()}"></td>
+    <td th:text="${user.getRole()}"></td>
+    <td>
+      <form th:method="GET" th:action="@{/admin/show-all-users/{id}(id=${user.getId()})}">
+        <input type="submit" value="LOOK USER"/>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

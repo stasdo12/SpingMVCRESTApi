@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" xmlns:th="http://www.thymeleaf.org">
+  <title>ADMIN PAGE</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #006699;
+      color: white;
+      font-weight: bold;
+      border-bottom: 2px solid white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">PROFILE SETTINGS</a></li>
+      <li><a href="/logout">EXIT</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+
+
+  <h1>ADMIN PAGE</h1>
+  <section>
+    <h2>Control Panel</h2>
+    <ul>
+      <li><a href="/admin/show-all-users">User Management</a></li>
+      <li><a href="/admin/orders">Order management</a></li>
+      <li><a href="/admin/planet">Planets room</a></li>
+      <li><a href="/admin/api-resources">API</a></li>
+
+    </ul>
+  </section>
+  <section>
+    <h2>ORDERS</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>COIN</th>
+        <th>PROFIT</th>
+        <th>ACTION</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>VALUE</td>
+        <td>ivanov@mail.com</td>
+        <td>Администратор</td>
+      </tr>
+
+
+      </tbody>
+    </table>
+  </section>
+</main>
+<footer>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Page</title>
+  <style>
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      color: #666;
+    }
+    .api-link {
+      display: block;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .api-link:hover {
+      background-color: #0052b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to the API Page</h1>
+  <p>This is an example of an API</p>
+  <br>
+  <a href="/api/codes">/api/codes ::(GET)We can get all codes from binance</a>
+  <br>
+  <a href="/api/codes/{title}">/api/codes/{title} ::(GET)We can get one code by title</a>
+  <br>
+  <a href="/api/codes/">/api/codes ::(PUT)We can add one code by title</a>
+  <br>
+  <a href="/api/codes/">/api/codes/{title} ::(DELETE)We can delete one code by title</a>
+  <br>
+  <a href="/api/codes/">/api/codes/{title} ::(PATCH)We can update one code by title</a>
+  <br>
+  <a href="/api/codes/">/api/codes/with/{title} ::(GET)We can get all codes from binance by Title</a>
+  <br>
+
+</div>
+</body>
+</html>

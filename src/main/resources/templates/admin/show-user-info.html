@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Info</title>
+</head>
+<style>
+  .user-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+  }
+
+  button:hover {
+    background-color: #0062cc;
+
+
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50; /* Зеленый цвет */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41; /* Темно-зеленый цвет при наведении курсора */
+  }
+
+  input[type="submit"][value="Удалить"] {
+    background-color: #f44336; /* Красный цвет */
+  }
+
+  input[type="submit"][value="Удалить"]:hover {
+    background-color: #c62828; /* Темно-красный цвет при наведении курсора */
+  }
+
+  input[type="submit"][value="Редактировать"] {
+    background-color: #9c27b0; /* Фиолетовый цвет */
+  }
+
+  input[type="submit"][value="Редактировать"]:hover {
+    background-color: #6a1b9a; /* Темно-фиолетовый цвет при наведении курсора */
+  }
+</style>
+<body>
+<div class="user-info">
+  <h1>User Info</h1>
+  <p th:text="'ID: ' + ${user.getId()}"></p>
+  <p th:text="'Name: ' + ${user.getUsername()}"></p>
+  <p th:text="'Email: ' + ${user.getEmail()}"></p>
+  <p th:text="'ROLE : ' + ${user.getRole()}"></p>
+  <form  th:method="DELETE" th:action="@{/admin/show-all-users/{id}(id=${user.getId()})}">
+    <input type="submit" value="Удалить"/>
+  </form>
+
+  <form th:method="GET" th:action="@{/admin/show-all-users/{id}/edit(id=${user.getId()})}">
+    <input type="submit" value="Редактировать"/>
+  </form>
+</div>
+
+
+</body>
+</html>

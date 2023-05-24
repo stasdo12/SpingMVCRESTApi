@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AllPools</title>
+    <div th:replace="auth/header :: header"></div>
+
+<style>
+    header {
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #e0e0e0;
+    }
+    table{
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th,td{
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th{
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pol:${pools}">
+        <td th:text="${pol.getUsername()}"></td>
+        <td th:text="${pol.getRole()}"></td>
+        <td th:text="${pol.getEmail()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

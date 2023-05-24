@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Copy Trading</title>
+
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .content {
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .cta {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cta:hover {
+      background-color: #666;
+    }
+
+    header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+  <div th:replace="auth/header :: header"></div>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Copy Trading</h1>
+</div>
+<div class="content">
+  <h2>What is Copy Trading?</h2>
+  <p>Copy Trading is a trading strategy where traders copy the trades of other traders. By copying trades, traders can benefit from the experience and expertise of others, without having to do the research and analysis themselves.</p>
+  <h2>How does it work?</h2>
+  <p>Copy Trading platforms connect traders with other traders, who have a proven track record of success. Traders can then choose to follow the trades of other traders, and their accounts will automatically mirror the trades of the trader they are following.</p>
+  <a href="/user/all-pull" class="cta">Get Started</a>
+  <a href="/user/findCode" class="cta">Find Pair</a>
+  <a href="/user/all_code" class="cta">All Pair</a>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bin : ${binance}">
+      <td th:text="${bin.getSymbol()}"></td>
+      <td th:text="${bin.getPrice()}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+</div>
+</body>
+</html>

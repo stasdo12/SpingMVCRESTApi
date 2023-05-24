@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHAR</title>
+</head>
+<body>
+<div th:each="ch:${char}">
+  <p th:text="${ch.getType() + ' ' +ch.getItem() }"></p>
+</div>
+</body>
+</html>
